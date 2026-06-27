@@ -1,55 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brandly Official</title>
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
       background: #0f0f0f;
       color: white;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background: #111;
+      position: sticky;
+      top: 0;
+    }
+
+    nav h2 {
+      color: #fff;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #aaa;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #111, #1f1f1f);
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #bbb;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: white;
+      color: black;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 60px;
       text-align: center;
     }
 
-    .hero {
-      padding: 120px 20px;
-      background: linear-gradient(135deg, #111, #222);
+    h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
     }
 
-    h1 {
-      font-size: 50px;
-    }
-
-    .section {
-      padding: 60px 20px;
+    /* SERVICES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #1c1c1c;
+      background: #1b1b1b;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #222;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .work {
+      height: 180px;
+      background: #222;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #111;
+    }
+
+    .contact p {
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    footer {
       padding: 20px;
-      margin: 10px;
-      display: inline-block;
-      width: 250px;
-      border-radius: 10px;
+      text-align: center;
+      color: #666;
+      background: #0a0a0a;
     }
   </style>
 </head>
 
 <body>
 
+  <nav>
+    <h2>Brandly</h2>
+    <div>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <div class="hero">
     <h1>Brandly Official</h1>
-    <p>We design brands that actually look like they deserve attention.</p>
+    <p>We design powerful brands and manage social media that actually builds attention, identity, and growth.</p>
+    <a class="btn" href="#services">Explore Work</a>
   </div>
 
-  <div class="section">
-    <h2>Services</h2>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Logos, posts, branding kits, and visuals that don’t look basic.</p>
+      </div>
+      <div class="card">
+        <h3>Social Media</h3>
+        <p>Content strategy, page growth, and consistent branding.</p>
+      </div>
+      <div class="card">
+        <h3>Brand Strategy</h3>
+        <p>We shape how people perceive your business online.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="card">Graphic Design</div>
-    <div class="card">Social Media Management</div>
-    <div class="card">Brand Strategy</div>
-  </div>
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio">
+      <div class="work">Project 1</div>
+      <div class="work">Project 2</div>
+      <div class="work">Project 3</div>
+      <div class="work">Project 4</div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: brandlyofficial@gmail.com</p>
+    <p>Instagram: @brandlyofficial</p>
+  </section>
+
+  <footer>
+    © 2026 Brandly Official. All rights reserved.
+  </footer>
 
 </body>
 </html>
