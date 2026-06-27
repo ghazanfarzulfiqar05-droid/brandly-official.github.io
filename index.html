@@ -1,201 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandly Official</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brandly Official</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    body {
-      background: #0f0f0f;
-      color: white;
-      line-height: 1.6;
-    }
+<style>
+:root{
+  --bg:#0b0f0c;
+  --card:#121a14;
+  --olive:#7a8f3a;
+  --olive2:#b7d35a;
+  --text:#eaeaea;
+  --muted:#a9b0a3;
+}
 
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 60px;
-      background: #111;
-      position: sticky;
-      top: 0;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
 
-    nav h2 {
-      color: #fff;
-      letter-spacing: 2px;
-    }
+body{
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
 
-    nav a {
-      color: #aaa;
-      margin-left: 20px;
-      text-decoration: none;
-    }
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+  position:sticky;
+  top:0;
+  background:rgba(11,15,12,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #1c2a1e;
+  z-index:10;
+}
 
-    nav a:hover {
-      color: white;
-    }
+.logo{
+  font-weight:700;
+  letter-spacing:3px;
+  color:var(--olive2);
+}
 
-    /* HERO */
-    .hero {
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #111, #1f1f1f);
-      padding: 20px;
-    }
+nav a{
+  color:var(--muted);
+  margin-left:20px;
+  text-decoration:none;
+  font-size:14px;
+}
 
-    .hero h1 {
-      font-size: 60px;
-      margin-bottom: 15px;
-    }
+nav a:hover{color:var(--olive2);}
 
-    .hero p {
-      max-width: 600px;
-      color: #bbb;
-    }
+/* HERO */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at top, rgba(183,211,90,0.18), transparent 55%),
+    radial-gradient(circle at bottom, rgba(122,143,58,0.15), transparent 60%);
+}
 
-    .btn {
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: white;
-      color: black;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.hero h1{
+  font-size:70px;
+  letter-spacing:2px;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 80px 60px;
-      text-align: center;
-    }
+.hero p{
+  max-width:650px;
+  margin-top:15px;
+  color:var(--muted);
+}
 
-    h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
-    }
+.btn{
+  margin-top:25px;
+  padding:12px 28px;
+  background:linear-gradient(135deg,var(--olive),var(--olive2));
+  color:black;
+  font-weight:700;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
 
-    /* SERVICES */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.btn:hover{
+  transform:scale(1.05);
+}
 
-    .card {
-      background: #1b1b1b;
-      padding: 25px;
-      border-radius: 12px;
-      transition: 0.3s;
-    }
+/* SECTIONS */
+section{
+  padding:90px 60px;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      background: #222;
-    }
+h2{
+  font-size:36px;
+  margin-bottom:25px;
+  color:var(--olive2);
+}
 
-    /* PORTFOLIO */
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* ABOUT */
+.about p{
+  max-width:750px;
+  color:var(--muted);
+  line-height:1.7;
+}
 
-    .work {
-      height: 180px;
-      background: #222;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-    }
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
 
-    /* CONTACT */
-    .contact {
-      background: #111;
-    }
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:14px;
+  border:1px solid #1c2a1e;
+  transition:0.4s;
+}
 
-    .contact p {
-      color: #aaa;
-      margin-bottom: 10px;
-    }
+.card:hover{
+  transform:translateY(-8px);
+  border-color:var(--olive2);
+}
 
-    footer {
-      padding: 20px;
-      text-align: center;
-      color: #666;
-      background: #0a0a0a;
-    }
-  </style>
+.card h3{
+  margin-bottom:10px;
+  color:var(--olive2);
+}
+
+/* PORTFOLIO */
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.work{
+  height:200px;
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #1c2a1e;
+}
+
+.work img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.7);
+  transition:0.4s;
+}
+
+.work:hover img{
+  transform:scale(1.1);
+  filter:brightness(1);
+}
+
+.work span{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  font-weight:600;
+  color:white;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  background:#0e1510;
+  border-top:1px solid #1c2a1e;
+}
+
+.contact p{
+  color:var(--muted);
+  margin:8px 0;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#6f7a6a;
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <h2>Brandly</h2>
-    <div>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <div class="hero">
-    <h1>Brandly Official</h1>
-    <p>We design powerful brands and manage social media that actually builds attention, identity, and growth.</p>
-    <a class="btn" href="#services">Explore Work</a>
+<nav>
+  <div class="logo">BRANDLY</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Work</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Graphic Design</h3>
-        <p>Logos, posts, branding kits, and visuals that don’t look basic.</p>
-      </div>
-      <div class="card">
-        <h3>Social Media</h3>
-        <p>Content strategy, page growth, and consistent branding.</p>
-      </div>
-      <div class="card">
-        <h3>Brand Strategy</h3>
-        <p>We shape how people perceive your business online.</p>
-      </div>
+<div class="hero">
+  <h1>Brandly Official</h1>
+  <p>We design bold brands and build social media presence that actually grows businesses, not just fills feeds.</p>
+  <a class="btn" href="#portfolio">View Work</a>
+</div>
+
+<section id="about" class="about">
+  <h2>About Us</h2>
+  <p>
+    Brandly Official is a modern creative agency focused on branding, design, and social media strategy.
+    We help businesses build strong visual identities and consistent digital presence that stands out in crowded markets.
+  </p>
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Brand Identity</h3>
+      <p>Logos, color systems, and full brand identity design.</p>
     </div>
-  </section>
 
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio">
-      <div class="work">Project 1</div>
-      <div class="work">Project 2</div>
-      <div class="work">Project 3</div>
-      <div class="work">Project 4</div>
+    <div class="card">
+      <h3>Social Media</h3>
+      <p>Content strategy and management that drives engagement.</p>
     </div>
-  </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: brandlyofficial@gmail.com</p>
-    <p>Instagram: @brandlyofficial</p>
-  </section>
+    <div class="card">
+      <h3>Creative Design</h3>
+      <p>Posts, ads, and visuals that stop the scroll instantly.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Brandly Official. All rights reserved.
-  </footer>
+<section id="portfolio">
+  <h2>Portfolio</h2>
+
+  <div class="portfolio">
+    <div class="work">
+      <img src="https://images.unsplash.com/photo-1557683316-973673baf926" />
+      <span>Brand Identity</span>
+    </div>
+
+    <div class="work">
+      <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb" />
+      <span>Social Media</span>
+    </div>
+
+    <div class="work">
+      <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d" />
+      <span>Logo Design</span>
+    </div>
+
+    <div class="work">
+      <img src="https://images.unsplash.com/photo-1526481280695-3c687fd5432c" />
+      <span>Campaign Design</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: brandlyofficial@gmail.com</p>
+  <p>Instagram: @brandlyofficial</p>
+</section>
+
+<footer>
+  © 2026 Brandly Official
+</footer>
+
+<a class="whatsapp" href="https://wa.me/923000000000" target="_blank">
+  WhatsApp
+</a>
 
 </body>
 </html>
