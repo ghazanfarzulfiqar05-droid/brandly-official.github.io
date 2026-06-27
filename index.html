@@ -1,10 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brandly Official</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #111, #1e1e1e);
+    }
+
+    h1 {
+      font-size: 50px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 600px;
+      opacity: 0.8;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Brandly Official</h1>
-  <p>Creative Design & Social Media Management Agency</p>
+
+  <div class="hero">
+    <h1>Brandly Official</h1>
+    <p>We design bold brands and manage social media that actually gets attention, not ignored into the void.</p>
+    <a class="btn" href="#services">Explore Services</a>
+  </div>
+
+  <div class="section" id="services">
+    <h2>Our Services</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Posters, branding, logos, and visuals that don’t look like Canva templates from 2016.</p>
+      </div>
+
+      <div class="card">
+        <h3>Social Media</h3>
+        <p>We grow your pages with strategy, not random posting and hope.</p>
+      </div>
+
+      <div class="card">
+        <h3>Brand Strategy</h3>
+        <p>We help you stop looking like “just another page” on the internet.</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
